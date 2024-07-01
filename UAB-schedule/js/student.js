@@ -86,13 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const fileName = `${faculty}_${specialization}_${year}_${group}.pdf`; // Assuming timetable is in PDF format
-        const filePath = `orar studenți/${faculty}/${specialization}/${year}/${fileName}`; // Path to the timetable PDF
+        const filePath = `orar%20studenți/${faculty}/${specialization}/${year}/${fileName}`; // Path to the timetable PDF
 
-        const encodedFilePath = encodeURIComponent(filePath).replace(/%2F/g, '/'); // Encode the file path
-
-        console.log("Generated File Path:", encodedFilePath); // Clarifies if the file path was generated correctly
+        console.log("Generated File Path:", filePath); // Clarifies if the file path was generated correctly
 
         // Open the PDF in a new tab
-        window.open(encodedFilePath, '_blank');
+        window.open(filePath, '_blank');
     });
 });
